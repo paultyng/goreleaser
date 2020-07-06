@@ -56,9 +56,6 @@ func (*Builder) WithDefaults(build config.Build) config.Build {
 	if len(build.Targets) == 0 {
 		build.Targets = matrix(build)
 	}
-	if build.ModTimestamp == "" {
-		build.ModTimestamp = "{{.Timestamp}}"
-	}
 	return build
 }
 
